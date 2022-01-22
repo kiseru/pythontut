@@ -5,11 +5,13 @@ INTERVAL_START = 0
 INTERVAL_END = 16
 
 number_to_guess = random.randrange(INTERVAL_START, INTERVAL_END)
+is_won = False
 for _ in range(NUMBER_OF_ATTEMPTS):
     attempt = int(input(f"Загадано число от {INTERVAL_START} до {INTERVAL_END}, отгадайте какое? "))
 
-    if number_to_guess == input:
+    if attempt == number_to_guess:
         print("Ура, вы выиграли!")
+        is_won = True
         break
 
     if attempt > number_to_guess:
@@ -22,4 +24,5 @@ for _ in range(NUMBER_OF_ATTEMPTS):
     else:
         print("Холодно")
 
-print(f"В этот раз вам не повезло. Было загадано число {number_to_guess}")
+if not is_won:
+    print(f"В этот раз вам не повезло. Было загадано число {number_to_guess}")
