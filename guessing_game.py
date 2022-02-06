@@ -6,6 +6,7 @@ INTERVAL_END = 16
 
 is_won = False
 
+
 def generate_number_to_guess(interval_start, interval_end):
     number_to_guess = random.randrange(interval_start, interval_end)
     print(f"Загадано число от {interval_start} до {interval_end}, отгадайте какое?")
